@@ -28,7 +28,13 @@ let btnDown = document.querySelector(".down");
 btnDown.addEventListener("click", function() {
 
     list[activeIndex].classList.remove("active");
-    activeIndex++;
+    
+    if (activeIndex === list.length - 1) {
+        activeIndex = 0;
+    } else {
+        activeIndex++;
+    }
+
     list[activeIndex].classList.add("active");
 });
 
@@ -36,7 +42,13 @@ let btnUp = document.querySelector(".up");
 btnUp.addEventListener("click", function() {
 
     list[activeIndex].classList.remove("active");
-    activeIndex--;
+    
+    if (activeIndex === 0) {
+        activeIndex = list.length - 1;
+    } else {
+        activeIndex--;
+    }
+    
     list[activeIndex].classList.add("active");
 });
 
